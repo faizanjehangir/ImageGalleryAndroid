@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/albumRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pictures_bg"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/pictureType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="My Albums"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <GridLayout
+        android:id="@+id/albumMainGrid"
+        android:layout_below="@id/pictureType"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="60dp"
+        
+        android:focusable="true"
+        android:rowCount="100" />
+
+    <RelativeLayout
+        android:id="@+id/thumbnailRelMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/thumbnailRelInnerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/pictures_bg_trans2" >
+
+            <TextView
+                android:id="@+id/albumName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <GridLayout
+                android:id="@+id/thumbnailGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/albumName"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginRight="83dp"
+                android:layout_marginTop="70dp"
+                android:focusable="true"
+                android:rowCount="100" />
+
+            <RelativeLayout
+                android:id="@+id/expandImagebackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/expanded_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible" />
+
+                <RelativeLayout
+                    android:id="@+id/buttonsPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+                    
+                    <Button
+                        android:id="@+id/btnplay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ssplay" />
+
+                    <Button
+                        android:id="@+id/btnprev"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:nextFocusRight="@id/btnplay"
+                        android:layout_alignParentLeft="true"                       
+                        android:background="@drawable/ssprev" />                
+
+                    <Button
+                        android:id="@+id/btnnext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:nextFocusLeft="@id/btnplay"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/ssnext" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
